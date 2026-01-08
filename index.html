@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARCTIT</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- custom CSS -->
+    <link rel="stylesheet" href="./scss/style.css">
+
+</head>
+
+<body>
+
+    <header class="header fixed-top bg-white bg-transparent">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <a class="site-logo" href="#">
+                <img src="./images/logo.svg" width="178" height="95" alt="ARCTIT">
+            </a>
+            <div  id="menu-button" class="hamburger-menu">
+                <div class="toggle position-relative bg-transparent d-flex overflow-visible justify-content-end">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<div id="nav-main" class="menu-overlay position-fixed overflow-hidden d-flex align-items-start justify-content-start">
+  <nav class="menu-content container-fluid d-flex flex-column px-5">
+    <a class="link" href="#">Home</a>
+    <a class="link" href="#">About us</a>
+    <a class="link" href="#">Services</a>
+    <a class="link" href="#">Contact us</a>
+  </nav>
+</div>
+
+
+    <main>
+        <section class="hero-section overflow-hidden">
+            <div class="container-fluid">
+                <div id="carouselExampleCaptions" class="carousel slide " data-bs-touch="true">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="./images/hero-image.webp" class="d-block w-100 carousel-iamge object-fit-cover"
+                                alt="carousel-iamge">
+                            <div class="d-block position-absolute carousel-content">
+                                <div class="carousel-content-inner">
+                                    <h1 class="h1">BUILD WITH NEXT GENERATION OF ARCHITECT</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./images/hero-image.webp" class="d-block w-100 carousel-iamge object-fit-cover"
+                                alt="carousel-iamge">
+                            <div class="d-block position-absolute carousel-content">
+                                <div class="carousel-content-inner">
+                                    <h1 class="h1">BUILD WITH NEXT GENERATION OF ARCHITECT</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-btn position-absolute d-flex w-auto">
+                        <div type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                            <img src="./images/prev.svg" width="40" height="20" alt="prev">
+                        </div>
+                        <div type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                            <img src="./images/next.svg" width="40" height="20" alt="next">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- Bootstrap JS  -->
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+
+    <!-- custom JS-->
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

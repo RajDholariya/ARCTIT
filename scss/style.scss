@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+
+// custom variables
+$primary: #ffffff;
+$dark: #000000;
+$font-family-roboto: 'Roboto', sans-serif;
+$height-full: 100vh;
+$bold: 900;
+
+// font-size
+$large: 90px;
+$small: 80px;
+
+@mixin large {
+    font-size: $large;
+    line-height: 109px;
+    color: $primary;
+    font-weight: $bold;
+    @media (max-width: 1400px) {
+        font-size: 70px;
+        line-height: 80px;
+    }
+    @media (max-width: 1200px) {
+        font-size: 60px;
+        line-height: 70px;
+    }
+    @media (max-width: 1023px) {
+        font-size: 50px;
+        line-height: 60px;
+    }
+    @media (max-width: 767px) {
+        font-size: 40px;
+        line-height: 48px;
+    }
+
+}
+
+@mixin small {
+    font-size: $small;
+    line-height: 109px;
+    color: $primary;
+    font-weight: $bold;
+    @media (max-width: 1400px) {
+        font-size: 70px;
+        line-height: 80px;
+    }
+    @media (max-width: 1200px) {
+        font-size: 60px;
+        line-height: 70px;
+    }
+    @media (max-width: 1023px) {
+        font-size: 50px;
+        line-height: 60px;
+    }
+    @media (max-width: 767px) {
+        font-size: 40px;
+        line-height: 72px;
+    }
+
+}
+
+// scss
+body {
+    font-family: $font-family-roboto;
+    background: $dark;
+    .container-fluid {
+        padding: 0;
+    }
+    header{
+        padding: 50px;
+        @media (max-width: 1400px) {
+            padding: 40px !important;
+        }
+        @media (max-width: 1200px) {
+            padding: 35px 25px!important;
+        }
+        @media (max-width: 1023px) {
+            padding: 30px 15px !important;
+        }
+        .site-logo img{
+            @media (max-width: 1400px) {
+                max-width: 150px;
+            }
+            @media (max-width: 1200px) {
+                max-width: 130px;
+            }
+            @media (max-width: 1023px) {
+                max-width: 110px;
+            }
+            @media (max-width:767px){
+                max-width: 100px;
+            }
+        }
+        .hamburger-menu {
+            .toggle {
+                width: 45px;
+                height: 17px;
+                cursor: pointer;
+                span {
+                    position: absolute;
+                    width: 34px;
+                    height: 4px;
+                    background: $primary;
+                    transition: 0.5s;
+    
+                    &:nth-child(1) {
+                        transform: translateX(-10px);
+                        -webkit-transform: translateX(-10px);
+                        -moz-transform: translateX(-10px);
+                        -ms-transform: translateX(-10px);
+                        -o-transform: translateX(-10px);
+                    }
+    
+                    &:nth-child(2) {
+                        transform: translateY(10px);
+                        -webkit-transform: translateY(10px);
+                        -moz-transform: translateY(10px);
+                        -ms-transform: translateY(10px);
+                        -o-transform: translateY(10px);
+                    }
+                }
+            }
+    
+            .toggle.active {
+                span:nth-child(1) {
+                    width: 30px;
+                    transform: translateX(0) rotate(45deg);
+                    transition-delay: 0.1s;
+                }
+    
+                span:nth-child(2) {
+                    width: 30px;
+                    transform: translateX(0) rotate(-45deg);
+                    transition-delay: 0.2s;
+                }
+            }
+        }
+    }
+    main {
+        .hero-section {
+            height: $height-full;
+            .carousel-iamge {
+                height: $height-full;
+            }
+            .carousel-content {
+                position: relative;
+                padding-inline: 260px;
+                padding-block: 115px;
+                width: 100%;
+                bottom: 50px;
+                @media (max-width: 1400px) {
+                    padding-inline: 180px;
+                    padding-block: 90px;
+                }
+                @media (max-width: 1200px) {
+                    padding-inline: 90px;
+                    padding-block: 70px;
+                }
+                @media (max-width: 1023px) {
+                    padding-inline: 50px;
+                    padding-block: 50px;
+                }
+                @media (max-width:767px){
+                    top: 160px !important;
+                    padding-inline: 35px;
+                    padding-block: 40px 25px;
+                }
+                &::before{
+                    content: '';
+                    position:absolute;
+                    top:0;
+                    left: -210px;
+                    background: url('./images/hero-text-bg.png');
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+                .carousel-content-inner{
+                    max-width: 895px;
+                    @media (max-width:767px){
+                        max-width: 345px;
+                    }
+                    h1,
+                    .h1 {
+                        @include large();
+                        letter-spacing: 0.054em;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+
+            .carousel-btn {
+                top: calc(100% - 80px);
+                right: 80px;
+                gap: 8px;
+                @media (max-width:768px){
+                    right: 50%;
+                    transform: translateX(50%);
+                    -webkit-transform: translateX(50%);
+                    -moz-transform: translateX(50%);
+                    -ms-transform: translateX(50%);
+                    -o-transform: translateX(50%);
+                }
+            }
+        }
+
+    }
+
+
+    /* Overlay */
+    .menu-overlay {
+        position: fixed;
+        inset: 0;
+        background: $dark;
+        height: 0;
+        width: 100%;
+        overflow: hidden;
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        .menu-content {
+            gap: 6px;
+            .link {
+                 @include small;
+                font-weight: 600;
+                color: $primary;
+                text-decoration: none;
+                opacity: 0;
+                text-align: left;
+                font-style: italic;
+                width: fit-content;
+                text-transform: capitalize;
+                &:hover{
+                    color: #b19777;
+                }
+            }
+        }
+    }
+
+
+
+
+    /* Responsive */
+
+
+}
